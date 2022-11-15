@@ -1,0 +1,33 @@
+﻿@model Task2.DTO.QuizDTO
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Who wants to be a millionaire</h1>
+    <img class="align-self-center" src="~/img/Home/logo.png" height="150" width="150" border="0" />
+</div>
+<div>
+    @using (Html.BeginForm("Index", "Home"))
+    {
+    <h2 class="text-center mt-5">@Html.DisplayFor(a => a.Question)</h2>
+        <div class="form-group">
+            <div class="quiz">
+                <div class="my-form">
+                    <button asp-action="Answer" type="submit" id="a" class="button2">A. @Html.DisplayFor(a => a.Answer1)</button>
+
+                    <button asp-action="Answer" type="submit" id="b" class="button2">B. @Html.DisplayFor(a => a.Answer2)</button>
+                </div>
+                <div class="my-form">
+                    <button asp-action="Answer" type="submit" id="c" class="button2">C. @Html.DisplayFor(a => a.Answer3)</button>
+
+                    <button asp-action="Answer" type="submit" id="d" class="button2">D. @Html.DisplayFor(a => a.Answer4)</button>
+                </div>
+            </div>
+            <h3>Current score: $@Html.DisplayFor(a => a.CurrentScore)</h3>
+            <p>Do you want to end?</p>
+            <input asp-action="ResultView" type="submit" class="btn btn-warning" name="endGame" value="End game" />
+        </div>
+    }
+</div>

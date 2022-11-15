@@ -1,0 +1,10 @@
+﻿@model Task2.DTO.QuizDTO
+
+@{
+    ViewData["Title"] = "Your result";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Your result</h1>
+    <h2>Congratulations. You have won $@Html.DisplayFor(x => x.CurrentScore)</h2>
+</div>
