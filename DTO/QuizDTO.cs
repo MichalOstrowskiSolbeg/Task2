@@ -7,6 +7,7 @@ namespace Task2.DTO
 {
     public class QuizDTO
     {
+        public int Id { get; set; }
         public string Question { get; set; }
         public string Answer1 { get; set; }
         public string Answer2 { get; set; }

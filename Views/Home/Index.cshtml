@@ -9,20 +9,22 @@
     <img class="align-self-center" src="~/img/Home/logo.png" height="150" width="150" border="0" />
 </div>
 <div>
-    @using (Html.BeginForm("Index", "Home"))
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
     {
     <h2 class="text-center mt-5">@Html.DisplayFor(a => a.Question)</h2>
         <div class="form-group">
             <div class="quiz">
+                @Html.HiddenFor(m => m.Id)
+                @Html.HiddenFor(m => m.CurrentScore)
                 <div class="my-form">
-                    <button asp-action="Answer" type="submit" id="a" class="button2">A. @Html.DisplayFor(a => a.Answer1)</button>
+                    <button asp-action="Answer" type="submit" id="a" value="@Html.DisplayFor(a => a.Answer1)" class="button2" name="task">A. @Html.DisplayFor(a => a.Answer1)</button>
 
-                    <button asp-action="Answer" type="submit" id="b" class="button2">B. @Html.DisplayFor(a => a.Answer2)</button>
+                    <button asp-action="Answer" type="submit" id="b" value="@Html.DisplayFor(a => a.Answer2)" class="button2" name="task">B. @Html.DisplayFor(a => a.Answer2)</button>
                 </div>
                 <div class="my-form">
-                    <button asp-action="Answer" type="submit" id="c" class="button2">C. @Html.DisplayFor(a => a.Answer3)</button>
+                    <button asp-action="Answer" type="submit" id="c" value="@Html.DisplayFor(a => a.Answer3)" class="button2" name="task">C. @Html.DisplayFor(a => a.Answer3)</button>
 
-                    <button asp-action="Answer" type="submit" id="d" class="button2">D. @Html.DisplayFor(a => a.Answer4)</button>
+                    <button asp-action="Answer" type="submit" id="d" value="@Html.DisplayFor(a => a.Answer4)" class="button2" name="task">D. @Html.DisplayFor(a => a.Answer4)</button>
                 </div>
             </div>
             <h3>Current score: $@Html.DisplayFor(a => a.CurrentScore)</h3>

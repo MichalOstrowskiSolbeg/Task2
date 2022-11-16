@@ -22,9 +22,9 @@ body {
 
 }
 
-.button2:hover
-.button2:focus {
+.button2:hover {
     background-color: #16437E;
+    font-size: 19px;
     color: #ffd800;
 }
 

@@ -9,7 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Task2.Interfaces;
 using Task2.Models;
+using Task2.Services;
 
 namespace Task2
 {
@@ -25,6 +27,8 @@ namespace Task2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IQuiz, QuizService>();
+
             services.AddDbContext<MyDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Database")));
             services.AddControllersWithViews();
