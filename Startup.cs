@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Task2.Interfaces;
 using Task2.Models;
+using Task2.Repository;
 using Task2.Services;
 
 namespace Task2
@@ -28,6 +29,7 @@ namespace Task2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IQuiz, QuizService>();
+            services.AddScoped<IQuizRepository, QuizRepository>();
 
             services.AddDbContext<MyDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Database")));
