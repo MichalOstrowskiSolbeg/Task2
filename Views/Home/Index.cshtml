@@ -9,7 +9,7 @@
     <img class="align-self-center" src="~/img/Home/logo.png" height="150" width="150" border="0" />
 </div>
 <div>
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    @using (Html.BeginForm("Index", "Home"))
     {
     <h2 class="text-center mt-5">@Html.DisplayFor(a => a.Question)</h2>
         <div class="form-group">

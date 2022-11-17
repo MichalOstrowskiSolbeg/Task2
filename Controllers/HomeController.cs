@@ -22,7 +22,6 @@ namespace Task2.Controllers
             return View();
         }
 
-        [HttpPost]
         public IActionResult Answer(QuizDTO data, string task)
         {
             if (_service.IsThatAWin(data, task))
@@ -34,7 +33,7 @@ namespace Task2.Controllers
             {
                 ModelState.Remove("Id");
                 ModelState.Remove("CurrentScore");
-                return View("index", _service.GetNextQuestion(data));
+                return View("Index", _service.GetNextQuestion(data));
             }
 
             return View("ResultView", new QuizDTO { });

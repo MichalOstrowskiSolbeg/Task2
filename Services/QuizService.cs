@@ -28,12 +28,7 @@ namespace Task2.Services
             var x = questions.ElementAt(new Random().Next(0, questions.Count));
 
             var list = new List<string>() { x.CorrectAnswer, x.Answer2, x.Answer3, x.Answer4 };
-            list = list.OrderBy((item) => new Random().Next()).ToList();
-            /*for (var i = list.Count; i > 0; i--)
-            {
-                list.Swap(0, new Random().Next(0, i));
-            }*/
-                
+            list = list.OrderBy((item) => new Random().Next()).ToList();            
 
             return new QuizDTO
             {
